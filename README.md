@@ -6,6 +6,8 @@ Site made with React front-end and Strapi headless CMS backend. Made for simple 
 
 App manages product and user databases, and utilizes a local storage account system, authorized via CMS.
 
+HTTP requests handled by Axios and Redux. Styling handled by TailwindCSS API. Links handled with React-Router-Dom.
+
 ## Instructions:
 
 Run REACT (frontend) server with "npm start"
