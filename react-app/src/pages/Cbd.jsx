@@ -17,6 +17,11 @@ const Cbd = () => {
         setSortType("price")
       }, []);
 
+
+      useEffect(() => {
+        document.title = "CBD - Uno Distribution";  
+      }, []);
+
     return (
     <div className="">
         <div className='relative p-5'>

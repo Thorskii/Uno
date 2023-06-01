@@ -41,6 +41,10 @@ const Product = () => {
       }, []);
 
 
+      useEffect(() => {
+        document.title = data.attributes.Name + " - Uno Distribution";  
+      }, []);
+
   
     return (
       <div className="flex flex-col md:flex-row py-10 px-50 gap-50">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom"
 import { storeUser } from "../../helpers";
@@ -37,6 +37,10 @@ const Login = () => {
         }
 
     }
+
+    useEffect(() => {
+        document.title = "Login - Uno Distribution";  
+      }, []);
 
     return (
     <div className="flex justify-center items-center">

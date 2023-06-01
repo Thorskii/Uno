@@ -24,6 +24,10 @@ const SearchPage = () => {
     setSearchInput(e.target.value);
     };
 
+    useEffect(() => {
+        document.title = "Search - Uno Distribution";  
+      }, []);
+
     return (
     <div>
         <h1 className="font-bold text-4xl pb-5 md:pb-0 pt-5 pl-5 text-mushTitle">Search</h1>

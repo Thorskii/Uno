@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
   
 const About = () => {
+
+    useEffect(() => {
+        document.title = "About - Uno Distribution";  
+      }, []);
+
     return (
         <div className="flex flex-col justify-center items-center">
             <div className="overflow-hidden h-[120px] md:h-[200px] lg:h-[400px]">

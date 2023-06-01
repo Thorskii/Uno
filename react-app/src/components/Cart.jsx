@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {FaTrashAlt} from "react-icons/fa"
 import { useSelector } from "react-redux";
 import { removeItem, resetCart } from "../redux/cartReducer";
@@ -17,6 +17,12 @@ const Cart = () => {
     });
     return total.toFixed(2);
   };
+
+  useEffect(() => {
+    document.title = "Cart - Uno Distribution";  
+  }, []);
+
+
   return (
     <div class="w-full items-center justify-center flex">
         <div className="cart">

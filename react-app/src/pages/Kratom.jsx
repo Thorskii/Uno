@@ -17,6 +17,10 @@ const Kratom = () => {
         setSortType("price")
       }, []);
 
+      useEffect(() => {
+        document.title = "Kratom - Uno Distribution";  
+      }, []);
+
     return (
     <div className="">
         <div className='relative p-5'>

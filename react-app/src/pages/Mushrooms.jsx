@@ -17,6 +17,11 @@ const Mushrooms = () => {
         setSortType("price")
       }, []);
 
+
+      useEffect(() => {
+        document.title = "Mushrooms - Uno Distribution";  
+      }, []);
+
     return (
     <div className="">
         <div className='relative p-5'>

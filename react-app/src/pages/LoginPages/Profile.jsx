@@ -9,6 +9,10 @@ const Profile = () => {
     const email = userData().email
     const address = userData().address
 
+    useEffect(() => {
+        document.title = "Profile - Uno Distribution";  
+      }, []);
+
 
     return (
     <div className="min-h-[600px]">

@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import "./Cart.css"
 
 import { useSelector } from "react-redux";
@@ -8,6 +9,9 @@ const Checkout = () => {
   const products = useSelector((state) => state.cart.products);
 
 
+  useEffect(() => {
+    document.title = "Checkout - Uno Distribution";  
+  }, []);
 
 
   return (
