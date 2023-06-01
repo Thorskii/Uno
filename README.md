@@ -1,4 +1,4 @@
-# Uno Distrobution Online Site / Catalog
+# Uno Distribution Online Site / Catalog
 
 ## Summary:
 
