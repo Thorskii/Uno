@@ -47,7 +47,7 @@ const Login = () => {
         <div>
             <h2 className="pb-5">Login:</h2>
             <form className="flex flex-col gap-y-2">
-                <input type="email" name="identifier" value={user.email} onChange={handleChange} placeholder="Enter your email"/>
+                <input type="email" name="identifier" value={user.email} onChange={handleChange} placeholder="Enter your email" className="invalid:border-red-500"/>
                 <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Enter your password"/>
                 <button onClick={handleLogin}>Login</button>
                 <Link to="/register">Sign Up</Link>

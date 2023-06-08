@@ -33,7 +33,7 @@ export default function AppRouter() {
                 <ul class="flex flex-col md:flex-row text-center md:text-left justify-right">
                     <CustomLink to="/search" className="grid p-6 hover:bg-gray-200 justify-center" ><FaSearch /></CustomLink>
                     <CustomLink to="/login" className="grid p-6 hover:bg-gray-200 justify-center"><FaUser /></CustomLink>
-                    <CustomLink to="/cart" className="grid p-6 relative hover:bg-gray-200 justify-center" onClick={()=>setOpen(!open)}><FaShoppingCart /><span class="text-xs absolute w-[15px] rounded-xl bg-blue-500 text-center items-center justify-center right-4 top-4">{products.length}</span></CustomLink>
+                    <CustomLink to="/cart" className="grid p-6 relative hover:bg-gray-200 justify-center" onClick={()=>setOpen(!open)}><FaShoppingCart /><span class="text-xs absolute w-[15px] rounded-xl bg-blue-500 text-white text-center items-center justify-center right-4 top-4">{products.length}</span></CustomLink>
                 </ul>
             </div>
             

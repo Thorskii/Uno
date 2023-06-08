@@ -3,7 +3,8 @@ import useFetch from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
-import {FaCartPlus, FaArrowLeft, FaArrowRight} from "react-icons/fa";
+import {FaCartPlus, FaArrowLeft, FaArrowRight} from "react-icons/fa"
+import axios from 'axios';
 import { userData } from '../helpers';
  
 const Product = () => {
@@ -32,17 +33,16 @@ const Product = () => {
         axios.get(process.env.REACT_APP_API_URL+`/flavors?populate[products]=*&filters[products][id][$eq]=${id}`)
         .then(res => setFlavors(res.data))
         .catch(err => console.log(err));
-      }, [])
+      }, [id])
 
 
       useEffect(() => {
         setChosenFlavor("")
       }, []);
 
-
       useEffect(() => {
-        document.title = data.attributes.Name + " - Uno Distribution";  
-      }, []);
+        document.title = data?.attributes?.Name + " - Uno Distribution";  
+      });
 
   
     return (
@@ -78,7 +78,6 @@ const Product = () => {
               </div>
               <h1 className="text-4xl font-bold">{data?.attributes?.Name}</h1>
               <span className="text-xl py-5">{checkStatus()}</span>
-              <p>{data?.attributes?.desc}</p>
               <div className="flex flex-col items-center lg:items-left lg:flex-row gap-10">
                 <div className="flex items-center gap-5">
                     <button className="w-[50px] h-[50px] flex items-center justify-center cursor-pointer border-none bg-gray-100 hover:bg-gray-200"
@@ -93,18 +92,21 @@ const Product = () => {
                 </div>
                 <button
                     className="w-[300px] p-2 flex items-center justify-center gap-5 cursor-pointer border bg-uno hover:underline"
-                    onClick={() =>
-                    dispatch(
-                        addToCart({
-                        id: data.id,
-                        title: data.attributes.Name,
-                        desc: data.attributes.Description,
-                        price: data.attributes.price,
-                        img: data.attributes.img.data.attributes.url,
-                        flavor: chosenFlavor.attributes.Name,
-                        quantity,
-                        })
-                    )
+                    id='add-to-cart'
+                    onClick={() => {
+                        if(chosenFlavor){dispatch(
+                            addToCart({
+                            id: data.id,
+                            title: data.attributes.Name,
+                            desc: data.attributes.Description,
+                            price: data.attributes.price,
+                            img: data.attributes.img.data.attributes.url,
+                            flavor: chosenFlavor.attributes.Name,
+                            quantity,
+                            }));
+                            document.getElementById("pickFlavor").innerHTML = "";
+                            document.getElementById("add-to-cart").innerHTML = "ITEM ADDED TO CART";
+                        } else {document.getElementById("pickFlavor").innerHTML = " *Please select a flavor!"}}
                     }
                 >
                     <FaCartPlus className=""/>ADD TO CART
@@ -115,16 +117,20 @@ const Product = () => {
 
             <div className="flex flex-col gap-3 text-base mt-30 py-5">
                 <hr />
-                <span className="font-semibold">FLAVORS</span>
+                <div>
+                    <span className="font-semibold">FLAVORS</span>
+                    <span id="pickFlavor" className='text-red-500 font-semibold'></span>
+                </div>
                 <div className="flex flex-wrap gap-3">
                     {flavors?.data?.map((flavor)=>(<button id={flavor.id} key={flavor.id} onClick={() => {setChosenFlavor((e) => (flavor)); 
-                        if(chosenFlavor) {
                             function buttonColor() {
-                                document.getElementById(chosenFlavor.id).style.borderColor='#e5e7eb'; 
-                                document.getElementById(chosenFlavor.id).style.backgroundColor='white';
+                                if(chosenFlavor) {
+                                    document.getElementById(chosenFlavor.id).style.borderColor='#e5e7eb'; 
+                                    document.getElementById(chosenFlavor.id).style.backgroundColor='white';
+                                }
                                 document.getElementById(flavor.id).style.backgroundColor='#eacf00'; 
                                 document.getElementById(flavor.id).style.borderColor='#eacf00'} 
-                                buttonColor()}} 
+                            buttonColor()}
                         } className="flex flex-row rounded border-2 border-gray-200 w-fit p-2 cursor-pointer text-base">{flavor?.attributes?.Name}</button>))}
                 </div>
                 
@@ -132,7 +138,7 @@ const Product = () => {
             <div className="flex flex-col gap-3 text-base mt-30 py-5">
                 <hr />
                 <span className="font-semibold">DESCRIPTION</span>
-                <span>{data?.attributes?.Description}</span>
+                <span className='lg:w-3/4'>{data?.attributes?.Description}</span>
                 <hr />
               </div>
             </div>
