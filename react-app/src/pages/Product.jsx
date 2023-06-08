@@ -3,8 +3,7 @@ import useFetch from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
-import {FaCartPlus, FaArrowLeft, FaArrowRight} from "react-icons/fa"
-import axios from 'axios';
+import {FaCartPlus, FaArrowLeft, FaArrowRight} from "react-icons/fa";
 import { userData } from '../helpers';
  
 const Product = () => {
