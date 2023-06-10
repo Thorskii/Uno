@@ -14,7 +14,7 @@ const Termsandconditions = () => {
             </div>
             <div className="space-y-4 w-11/12 lg:w-10/12 xl:w-1200 m-auto py-8 md:py-16">
                 <br></br>
-                <h1 className="font-bold text-4xl">Terms & Conditions</h1>
+                <h1 className="font-bold text-4xl">Terms of Use</h1>
                 <p>Last Updated: June 9, 2023</p>
                 <h3>These Terms of Use ("Agreement") govern your use of the business-to-business (B2B) product information and ordering website ("Website") provided by Uno Wireless Distribution LLC ("Company"). By accessing or using the Website, you agree to be bound by these terms and conditions. If you do not agree to these terms, please refrain from using the Website.</h3>
                 <br/>

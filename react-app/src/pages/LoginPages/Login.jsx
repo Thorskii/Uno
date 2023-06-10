@@ -43,15 +43,17 @@ const Login = () => {
       }, []);
 
     return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center align-middle h-[55vh]">
         <div>
-            <h2 className="pb-5">Login:</h2>
+            <h2 className="pb-5 text-2xl font-bold">Login:</h2>
             <form className="flex flex-col gap-y-2">
-                <input type="email" name="identifier" value={user.email} onChange={handleChange} placeholder="Enter your email" className="invalid:border-red-500"/>
-                <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Enter your password"/>
-                <button onClick={handleLogin}>Login</button>
-                <Link to="/register">Sign Up</Link>
+                <input type="email" name="identifier" value={user.email} onChange={handleChange} placeholder="Enter your email" className="rounded border-2 border-gray-200 w-full"/>
+                <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Enter your password" className="rounded border-2 border-gray-200 w-full"/>
+                <div className="flex w-1/2">
+                    <button onClick={handleLogin} className="hover:bg-blue-300 hover:underline py-2  w-full rounded bg-blue-400 w-full text-white">Login</button>
+                </div>
             </form>
+            <p>Don't have an account yet? <Link to="/register" className="text-center hover:underline text-blue-500">Sign Up</Link></p>
         </div>
     </div>
     )
