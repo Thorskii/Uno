@@ -23,6 +23,7 @@ import { Protector } from "./helpers";
 
 import Profile from "./pages/LoginPages/Profile";
 import { SendtoProfile } from "./helpers";
+import KratomInfo from "./pages/KratomInfo";
 
 
 
@@ -49,6 +50,8 @@ import { SendtoProfile } from "./helpers";
             <Route path="/logout" element={<Logout />}/>
             <Route path="/profile" element={<Profile />}/>
             <Route path="/register" element={<Registration />}/>
+
+            <Route path="/kratominfo" element={<KratomInfo />}/>
             
 
 

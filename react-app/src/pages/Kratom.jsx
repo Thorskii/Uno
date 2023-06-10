@@ -1,6 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import GetCards from "../components/GetCards"
+import {FaInfoCircle} from "react-icons/fa"
 
 
 
@@ -24,7 +25,7 @@ const Kratom = () => {
     return (
     <div className="">
         <div className='relative p-5'>
-            <h1 className="absolute font-bold text-4xl p-5 text-mushTitle left-0 lg:left-[220px] lg:-top-5">Kratom</h1>
+            <h1 className="absolute flex font-bold text-4xl p-5 text-mushTitle left-3 lg:left-[220px] lg:-top-5"><a href="/kratominfo"><FaInfoCircle className="absolute flex w-[20px] text-gray-300 hover:text-black top-6 left-0"/></a>Kratom</h1>
         </div>
         
         <div className="py-6 flex flex-col md:flex-row">
