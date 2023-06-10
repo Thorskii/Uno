@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom"
 import { storeUser } from "../../helpers";
-import Profile from "./Profile";
 
 
 const initialUser = { password: "", identifier: "" }
@@ -50,7 +49,7 @@ const Login = () => {
                 <input type="email" name="identifier" value={user.email} onChange={handleChange} placeholder="Enter your email" className="rounded border-2 border-gray-200 w-full"/>
                 <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Enter your password" className="rounded border-2 border-gray-200 w-full"/>
                 <div className="flex w-1/2">
-                    <button onClick={handleLogin} className="hover:bg-blue-300 hover:underline py-2  w-full rounded bg-blue-400 w-full text-white">Login</button>
+                    <button onClick={handleLogin} className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white">Login</button>
                 </div>
             </form>
             <p>Don't have an account yet? <Link to="/register" className="text-center hover:underline text-blue-500">Sign Up</Link></p>
