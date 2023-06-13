@@ -38,15 +38,13 @@ const Card = ({item}) => {
 
     return (
     <>
-        {/* mx-auto w-40 lg:w-56 xl:w-72 flex flex-col text-left text-sm rounded-lg border-solid border-2 border-mush bg-mush items-center */}
-        {/* p-1 md:p-2 w-1/2 sm:w-1/3 lg:w-1/6 */}
         <div className="p-1 md:p-2 w-1/2 sm:w-1/3 lg:w-[330px]">
             <div className="overflow-hidden rounded-xl shadow-lg border-solid border-2 border-mush ">
-                {/* box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; */}
                 <span className="border-box overflow-hidden bg-none relative">
                     {item?.attributes.isNew && <span>New</span>}
                         <Link to={`/product/${item.id}`}>
-                            <img className="mx-auto object-contain object-center w-40 lg:w-56 xl:w-full h-40" src={process.env.REACT_APP_UPLOAD_URL + item.attributes?.img?.data?.attributes?.url} alt="" />
+                            {/* <img className="mx-auto object-contain object-center w-40 lg:w-56 xl:w-full h-40" src={process.env.REACT_APP_UPLOAD_URL + item.attributes?.img?.data?.attributes?.url} alt="" /> */}
+                            <img className="mx-auto object-contain object-center w-40 lg:w-56 xl:w-full h-40" src={item.attributes?.img?.data?.attributes?.url} alt="" />
                         </Link>
                 </span>
                 <div className='p-3 md:w-full bg-mush px-5'>
