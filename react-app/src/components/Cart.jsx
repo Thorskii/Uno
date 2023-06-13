@@ -29,7 +29,7 @@ const Cart = () => {
             <h1>Products in your cart</h1>
             {products?.map((item) => (
                 <div className="item" key={item.id}>
-                <Link to={`/product/${item.id}`}><img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt="" /></Link>
+                <Link to={`/product/${item.id}`}><img src={item.img} alt="" /></Link>
                 <div className="details">
                     <h1>{item.title}</h1>
                     <p>Flavors: {item.flavor}</p>
