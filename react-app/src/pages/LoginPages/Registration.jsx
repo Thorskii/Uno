@@ -9,7 +9,7 @@ const Registration = () => {
 
     const signUp = async () => {
         try {
-            const url = `https://strapi-production-fc5a.up.railway.app/api/auth/loca/register`;
+            const url = `https://strapi-production-fc5a.up.railway.app/api/auth/local/register`;
             if(user.username && user.email && user.password) {
                 const res = await axios.post(url, user);
                 if(!!res){
