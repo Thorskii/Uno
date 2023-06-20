@@ -19,7 +19,7 @@ const Login = () => {
     };
 
     const handleLogin = async () => {
-        const url = `https://uno-production-ee43.up.railway.app/api/auth/local`;
+        const url = `https://strapi-production-fc5a.up.railway.app/api/auth/local`;
         try {
             if(user.identifier && user.password) {
                 const { data } = await axios.post(url, user);
