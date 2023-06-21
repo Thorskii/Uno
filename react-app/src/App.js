@@ -8,6 +8,10 @@ import Product from './pages/Product';
 import Cbd from "./pages/Cbd"
 import Mushrooms from "./pages/Mushrooms"
 import Kratom from "./pages/Kratom"
+import Vapes from "./pages/Vapes"
+import Love from "./pages/Love"
+import Cones from "./pages/TastyPuffCones";
+
 import Cart from "./components/Cart"
 import SearchPage from "./pages/SearchPage"
 import Checkout from "./components/Checkout"
@@ -41,6 +45,11 @@ import KratomInfo from "./pages/KratomInfo";
             <Route path="/cbd" element={<Cbd />}/>
             <Route path="/mushrooms" element={<Mushrooms />}/>
             <Route path="/kratom" element={<Kratom />}/>
+            <Route path="/vapes" element={<Vapes />}/>
+            <Route path="/love" element={<Love />}/>
+            <Route path="/cones" element={<Cones />}/>
+
+
             <Route path="/cart" element={<Protector Component={Cart}/>}/>
             <Route path="/terms-and-conditions" element={<Termsandconditions />}/>
             <Route path="/search" element={<SearchPage />}/>
