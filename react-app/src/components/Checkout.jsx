@@ -41,7 +41,7 @@ const Checkout = () => {
             <input type="email" value={data?.attributes?.email} label="E-Mail" name="email" disabled/>
             <input type="text" value={data?.attributes?.EIN} label="EIN" name="ein"disabled/>
             <input type="text" value={data?.attributes?.taxResale} label="taxResale" name="taxresale" disabled/>
-            <TextareaField value={products?.map((item) => (
+            <textarea value={products?.map((item) => (
                 <div className="item" key={item.id}>
                 <div className="details">
                     <h1>{item.title}</h1>
