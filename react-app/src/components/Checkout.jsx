@@ -37,6 +37,13 @@ const Checkout = () => {
       });
   };
 
+//   products?.map((item) => (item.quantity + "x  " + item.title + "   " + item.flavor + "   $"+ item.price + "\n")).join("")
+  const mapProds = () => {
+    let str = "";
+    products?.map((item) => (str += (item.quantity + "x  " + item.title + "   " + item.flavor + "   $"+ item.price + "\n"))).join("")
+    return str;
+  }
+
 
   return (
     <div className="w-full items-center justify-center flex flex-col">
@@ -52,7 +59,7 @@ const Checkout = () => {
             <label for="taxresale" className="font-bold">Tax Resale</label>
             <input type="text" value={data?.taxResale} name="taxresale" readonly/><br/>
             <label for="products" className="font-bold">Order</label>
-            <textarea  rows={products.length+5} value={products?.map((item) => (item.quantity + "x  " + item.title + "   " + item.flavor + "   $"+ item.price + "\n")).join("")} className="whitespace-pre-wrap" readonly/><br/>
+            <textarea  rows={products.length+5} name="products" value={mapProds()} className="whitespace-pre-wrap" readonly/><br/>
             <input type="submit" value="Place Order" className="hover:underline hover:cursor-pointer border h-[50px] w-[100px] bg-blue-500 text-white"/><br/>
 
         </form>
