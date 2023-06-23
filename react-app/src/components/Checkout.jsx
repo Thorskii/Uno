@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import { useEffect } from "react";
-import useFetch from "../hooks/useFetch";
-import { userData } from "../helpers";
+import useFetchUser from "../hooks/useFetchUser";
+import { useDispatch } from "react-redux";
+import { resetCart } from "../redux/cartReducer";
+import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import "./Cart.css"
 
@@ -10,11 +12,9 @@ import { useSelector } from "react-redux";
 const Checkout = () => {
     
   const products = useSelector((state) => state.cart.products);
-  const userN = userData().username;
-
-  
-  const { data, loading} = useFetch(`/users/me?populate=*`);
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const {data, loading} = useFetchUser(`/users/me?populate=*`);
 
   useEffect(() => {
     document.title = "Checkout - Uno Distribution";  
@@ -26,9 +26,11 @@ const Checkout = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_dqid85i', 'template_neg661k', form.current, 'LPTcyIM7ns-E4TWtc')
+    emailjs.sendForm(process.env.EMAIL_SERVICE_ID, process.env.EMAIL_TEMPLATE_ID, form.current, process.env.EMAIL_PUBLIC_KEY)
       .then((result) => {
           console.log(result.text);
+          dispatch(resetCart());
+          navigate("/");
       }, (error) => {
           console.log(error.text);
       });
@@ -36,24 +38,20 @@ const Checkout = () => {
 
 
   return (
-    <div className="w-full items-center justify-center flex">
-        Please confirm your information.
-        <form ref={form} onSubmit={sendEmail}>
-            <input type="text" value={data?.attributes?.businessName} label="Business Name" name="fullName" disabled/>
-            <input type="email" value={data?.attributes?.email} label="E-Mail" name="email" disabled/>
-            <input type="text" value={data?.attributes?.EIN} label="EIN" name="ein"disabled/>
-            <input type="text" value={data?.attributes?.taxResale} label="taxResale" name="taxresale" disabled/>
-            <textarea value={products?.map((item) => (
-                <div className="item" key={item.id}>
-                <div className="details">
-                    <h1>{item.title}</h1>
-                    <p>Flavors: {item.flavor}</p>
-                    <div className="price">{item.quantity} x ${item.price}</div>
-                </div>
-                </div>
-            ))} 
-            label="products" name="products" disabled/>
-            <input type="submit" value="Place Order" />
+    <div className="w-full items-center justify-center flex flex-col">
+        <h1 className="text-2xl">Please confirm your information.</h1><br/>
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col w-1/2 h-full">
+            <label for="fullName" className="font-bold">Business Name:</label>
+            <input type="text" value={data?.businessName} name="fullName" disabled/><br/>
+            <label for="email" className="font-bold">E-mail</label>
+            <input type="email" value={data?.email} name="email" disabled/><br/>
+            <label for="ein" className="font-bold">EIN</label>
+            <input type="text" value={data?.EIN} name="ein"disabled/><br/>
+            <label for="taxresale" className="font-bold">Tax Resale</label>
+            <input type="text" value={data?.taxResale} name="taxresale" disabled/><br/>
+            <label for="products" className="font-bold">Order</label>
+            <div className="whitespace-pre-wrap	">{products?.map((item) => (item.title + " " + item.flavor + " " + item.quantity +" $"+ item.price + "\n"))}</div><br/>
+            <input type="submit" value="Place Order" className="hover:underline border h-[50px] w-[100px] bg-blue-500 text-white items-right"/><br/>
 
         </form>
 
