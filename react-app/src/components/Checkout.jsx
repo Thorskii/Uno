@@ -40,8 +40,14 @@ const Checkout = () => {
 //   products?.map((item) => (item.quantity + "x  " + item.title + "   " + item.flavor + "   $"+ item.price + "\n")).join("")
   const mapProds = () => {
     let str = "";
-    products?.map((item) => (str += (item.quantity + "x  " + item.title + "   " + item.flavor + "   $"+ item.price + "\n"))).join("")
+    products?.map((item) => (str += (item.quantity + "x  |  " + item.title + "  |  " + item.flavor + "  |  $"+ item.price + "  |  $" + item.price*item.quantity + "\n"))).join("")
     return str;
+  }
+
+  const totalProds = () => {
+    let total = 0;
+    products?.map((item) => (total += (item.price*item.quantity)));
+    return "$"+total;
   }
 
 
@@ -52,14 +58,16 @@ const Checkout = () => {
 
             <label for="fullName" className="font-bold">Business Name:</label>
             <input type="text" value={data?.businessName} name="fullName" readonly/><br/>
-            <label for="email" className="font-bold">E-mail</label>
+            <label for="email" className="font-bold">E-mail:</label>
             <input type="email" value={data?.email} name="email" readonly/><br/>
-            <label for="ein" className="font-bold">EIN</label>
+            <label for="ein" className="font-bold">EIN:</label>
             <input type="text" value={data?.EIN} name="ein" readonly/><br/>
-            <label for="taxresale" className="font-bold">Tax Resale</label>
+            <label for="taxresale" className="font-bold">Tax Resale:</label>
             <input type="text" value={data?.taxResale} name="taxresale" readonly/><br/>
-            <label for="products" className="font-bold">Order</label>
+            <label for="products" className="font-bold">Order:</label>
             <textarea  rows={products.length+5} name="products" value={mapProds()} className="whitespace-pre-wrap" readonly/><br/>
+            <label for="taxresale" className="font-bold">Order Subtotal:</label>
+            <input type="text" value={totalProds()} name="total" readonly/><br/>
             <input type="submit" value="Place Order" className="hover:underline hover:cursor-pointer border h-[50px] w-[100px] bg-blue-500 text-white"/><br/>
 
         </form>
