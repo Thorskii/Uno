@@ -11,9 +11,9 @@ const Footer = () => {
                     </div>
                 </div>
                 <ul className="justify-center md:flex">
-                    <li className="hover:underline md:mb-0 md:py-0 mx-4">
+                    {/* <li className="hover:underline md:mb-0 md:py-0 mx-4">
                         <a href="/about">About</a>
-                    </li>
+                    </li> */}
                     <li className="hover:underline md:mb-0 md:py-0 mx-4">
                         <a href="mailto:dan@unowireless.com">Contact</a>
                     </li>
