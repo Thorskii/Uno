@@ -24,7 +24,7 @@ const Profile = () => {
         <br/><br/>
 
         <div className="flex w-full justify-center items-center">
-            <div className="flex flex-col gap-1 w-1/4 ">
+            <div className="flex flex-col gap-1 w-3/4 md:w-1/4 ">
                 <div className="flex">
                     <h2 className="px-5 text-xl ">Email:</h2>
                     <h2 className="text-xl text-center">{email}</h2>
@@ -38,14 +38,11 @@ const Profile = () => {
                 <div className="flex justify-center">
                     <p className="text-sm ">If you would like to update any of the above information, or other information on file, please <a href="mailto:dan@unowireless.com" className="text-blue-500 hover:underline">contact</a> us.</p>
                 </div>
-                
             </div>
         </div>
-
-
-        <div className="flex w-5/6 justify-end gap-10">
+        <div className="flex w-5/6 justify-end">
             <div className="flex min-h-[200px] justify-end items-end text-right">
-                <Link to="/logout" className="p-3 w-[130px] h-[60px] text-2xl text-white text-center bg-red-500">Logout</Link>
+                <Link to="/logout" className="p-3 w-[130px] h-[60px] text-2xl text-white text-center bg-red-500 rounded">Logout</Link>
             </div>
         </div>
 

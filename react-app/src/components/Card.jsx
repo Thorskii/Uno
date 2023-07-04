@@ -33,7 +33,7 @@ const Card = ({item}) => {
             .catch(err => console.log(err));
           }, [])
 
-        const str = flavors?.data?.map((flavor)=>(flavor?.attributes?.Name))
+        const str = flavors?.data?.slice(0,7).map((flavor)=>(flavor?.attributes?.Name))
         const out = str && str.join(', ')
 
     return (

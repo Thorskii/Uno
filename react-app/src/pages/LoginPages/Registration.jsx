@@ -15,6 +15,7 @@ const Registration = () => {
                 if(!!res){
                     setUser(initialUser)
                     navigate("/login")
+                    alert("Account successfully created.")
                     console.log(res)
                 }
             }
@@ -34,44 +35,42 @@ const Registration = () => {
         document.title = "Register - Uno Distribution";  
       }, []);
 
+    const inputArea = "w-full border rounded border border-slate-300 placeholder-slate-400 focus:outline-none  focus:border-sky-500  focus:ring-1  focus:ring-sky-500 disabled:bg-slate-50  disabled:text-slate-500  disabled:border-slate-200  disabled:shadow-none invalid:border-pink-500  invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+
     return (
     <div className="flex w-full">
         <div className="relative flex justify-center items-center w-full">
             <form className="flex flex-col gap-y-2 w-1/6">    
-                <h2 className="pb-5">Sign Up:</h2>
+                <h2 className="pb-5 font-bold">Sign Up:</h2>
                 <div>
                     <h2>Username:</h2>
-                    <input type="text" name="username" value={user.username} onChange={handleUserChange} placeholder="Enter your name" className="rounded border-2 border-gray-200 w-full"/>
+                    <input type="text" name="username" value={user.username} onChange={handleUserChange} placeholder="Enter your name" className={inputArea}/>
                 </div>
                 <div>
                     <h2>Password:</h2>
-                    <input type="password" name="password" value={user.password} onChange={handleUserChange} placeholder="Enter your password" className="rounded border-2 border-gray-200 w-full"/>
+                    <input type="password" name="password" value={user.password} onChange={handleUserChange} placeholder="Enter your password" className={inputArea}/>
                 </div>
                 <div>
                     <h2>Email:</h2>
-                    <input type="email" name="email" value={user.email} onChange={handleUserChange} placeholder="Enter your email" className="rounded border-2 border-gray-200 w-full"/>
+                    <input type="email" name="email" value={user.email} onChange={handleUserChange} placeholder="Enter your email" className={inputArea}/>
                 </div>
                 <div>
                     <h2>Business Name:</h2>
-                    <input type="text" name="businessName" value={user.businessName} onChange={handleUserChange} placeholder="Enter your business's name" className="rounded border-2 border-gray-200 w-full"/>
+                    <input type="text" name="businessName" value={user.businessName} onChange={handleUserChange} placeholder="Enter your business's name" className={inputArea}/>
                 </div>
                 <div>
                     <h2>Business Address:</h2>
-                    <input type="text" name="address" value={user.address} onChange={handleUserChange} placeholder="Enter your business's address" className="rounded border-2 border-gray-200 w-full"/>
+                    <input type="text" name="address" value={user.address} onChange={handleUserChange} placeholder="Enter your business's address" className={inputArea}/>
                 </div>
                 <div>
                     <h2>Employer Identification Number (EIN):</h2>
-                    <input type="text" name="EIN" id="EIN" value={user.EIN} onChange={handleUserChange} placeholder="Enter your EIN" className="rounded border-2 border-gray-200 w-full"/>
+                    <input type="text" name="EIN" id="EIN" value={user.EIN} onChange={handleUserChange} placeholder="Enter your EIN" className={inputArea}/>
                 </div>
                 <div>
                     <h2>Business Tax Resale Number:</h2>
-                    <input type="text" name="taxResale" id="taxResale" value={user.taxResale} onChange={handleUserChange} placeholder="Enter your Tax Resale Number" className="rounded border-2 border-gray-200 w-full"/>
-                </div>
-                
-                
-                
-                
-                <button className="hover:cursor-pointer hover:underline p-5" onClick={signUp}>Register</button>
+                    <input type="text" name="taxResale" id="taxResale" value={user.taxResale} onChange={handleUserChange} placeholder="Enter your Tax Resale Number" className={inputArea}/>
+                </div><br/>
+                <button className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white " onClick={signUp}>Register</button><br/>
             </form>
         </div>
     </div>

@@ -49,9 +49,9 @@ const Login = () => {
                 <input type="email" name="identifier" value={user.email} onChange={handleChange} placeholder="Enter your email" className="rounded border-2 border-gray-200 w-full"/>
                 <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Enter your password" className="rounded border-2 border-gray-200 w-full"/>
                 <div className="flex w-1/2">
-                    <button onClick={handleLogin} className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white">Login</button>
+                    <button onClick={handleLogin} className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white ">Login</button>
                 </div>
-            </form>
+            </form><br/>
             <p>Don't have an account yet? <Link to="/register" className="text-center hover:underline text-blue-500">Sign Up</Link></p>
         </div>
     </div>
