@@ -20,7 +20,7 @@ export default function AppRouter() {
         setMenuIcon(<FaX/>)
     }
     else {
-        setLinkClassName("hidden")
+        setLinkClassName("sm:hidden md:grid")
         setMenuIcon(<FaBars/>)
     }
     setIsMenuClicked(!isMenuClicked)
