@@ -40,6 +40,7 @@ export default function AppRouter() {
                     <Link to="/mushrooms" className={linkClassName}>Mushrooms</Link>
                     <Link to="/kratom" className={linkClassName}>Kratom</Link>
                     <Link to="/love" className={linkClassName}>Love</Link>
+                    <Link to="/salts" className={linkClassName}>Nicotine Salts</Link>
                 </ul>
             </div>
             <div className=""></div>
