@@ -54,7 +54,7 @@ const Checkout = () => {
   return (
     <div className="w-full items-center justify-center flex flex-col">
         <h1 className="text-2xl">Please confirm your information is correct.</h1><br/>
-        <form ref={form} onSubmit={sendEmail} className="flex flex-col sm:w-3/4 md:w-1/3 h-full">
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col w-3/4 md:w-1/3 h-full">
 
             <label for="fullName" className="font-bold">Business Name:</label>
             <input type="text" value={data?.businessName} name="fullName" readonly/><br/>
