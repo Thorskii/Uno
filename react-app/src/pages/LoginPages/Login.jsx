@@ -25,12 +25,14 @@ const Login = () => {
                 const { data } = await axios.post(url, user);
                 if(data.jwt){
                     storeUser(data)
+                    console.log(data)
                     setUser(initialUser);
-                    navigate("/");
+                    navigate("/profile");
                 }
             }
             
         } catch (error) {
+            alert("Username or password incorrect.")
             console.log({ error });
             console.log("Error with login!")
         }
