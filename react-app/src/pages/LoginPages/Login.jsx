@@ -25,9 +25,8 @@ const Login = () => {
                 const { data } = await axios.post(url, user);
                 if(data.jwt){
                     storeUser(data)
-                    console.log(data)
                     setUser(initialUser);
-                    navigate("/profile");
+                    window.location.href = '/profile'
                 }
             }
             

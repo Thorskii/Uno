@@ -10,12 +10,6 @@ import "./Cart.css"
 import { useSelector } from "react-redux";
 
 const Checkout = () => {
-    let reloaded = false;
-    if(reloaded = false){
-        reloaded = true;
-        window.location.reload();
-    }
-    
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
   const navigate = useNavigate();
