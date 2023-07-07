@@ -45,7 +45,7 @@ const Login = () => {
     <div className="flex justify-center items-center align-middle h-[55vh]">
         <div>
             <h2 className="pb-5 text-2xl font-bold">Login:</h2>
-            <form className="flex flex-col gap-y-2" >
+            <form className="flex flex-col gap-y-2" onSubmit={(event) => event.preventDefault()}>
                 <input type="email" name="identifier" value={user.email} onChange={handleChange} placeholder="Enter your email" className="rounded border-2 border-gray-200 w-full"/>
                 <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Enter your password" className="rounded border-2 border-gray-200 w-full" />
                 <div className="flex w-1/2">

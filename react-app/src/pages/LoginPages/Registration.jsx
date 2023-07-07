@@ -40,7 +40,7 @@ const Registration = () => {
     return (
     <div className="flex w-full">
         <div className="relative flex justify-center items-center w-full">
-            <form className="flex flex-col gap-y-2 w-1/6">    
+            <form className="flex flex-col gap-y-2 w-1/6" onSubmit={(event) => event.preventDefault()}>    
                 <h2 className="pb-5 font-bold">Sign Up:</h2>
                 <div>
                     <h2>Username:</h2>
