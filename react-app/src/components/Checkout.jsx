@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import useFetchUser from "../hooks/useFetchUser";
 import { useDispatch } from "react-redux";
@@ -10,7 +10,12 @@ import "./Cart.css"
 import { useSelector } from "react-redux";
 
 const Checkout = () => {
-    window.location.reload();
+    const[reloaded, setReloaded] = useState(false);
+    if(reloaded = false){
+        window.location.reload();
+        setReloaded(true);
+    }
+    
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
   const navigate = useNavigate();
