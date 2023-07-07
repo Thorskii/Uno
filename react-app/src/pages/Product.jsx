@@ -51,7 +51,7 @@ const Product = () => {
       }, []);
 
       const checkCat = () => {
-        if(data?.attributes?.categories === "Kratom Products") {
+        if(data?.attributes?.categories[0] === "Kratom Products") {
             return "STRAINS"
         } else {
             return "FLAVORS"

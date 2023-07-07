@@ -15,7 +15,7 @@ const GetCards = ({catId, sort, sortType}) => {
         <div className="flex flex-wrap md:gap-5 w-full">
             {loading
                 ? "loading"
-                : data?.map((item) => <Card item={item} key={item.id} catId={catId}/>)}
+                : data?.map((item) => <Card item={item} key={item.id}/>)}
             </div>
     </div>
   );
