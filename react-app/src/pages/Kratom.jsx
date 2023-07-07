@@ -15,7 +15,7 @@ const Kratom = () => {
       }, []);
 
       useEffect(() => {
-        setSortType("price")
+        setSortType("brand")
       }, []);
 
       useEffect(() => {
@@ -30,23 +30,23 @@ const Kratom = () => {
         
         <div className="py-6 flex flex-col md:flex-row">
             <div className="p-10 w-64">
-                <div className="">
+            <   div className="">
                     <h2 className="font-bold">Sort</h2>
                     <div className="">
-                        <input type="radio" id="asc" value="asc" name="sort" onChange={e=>{setSort("asc"); setSortType("price")}} defaultChecked />
-                        <label htmlFor="asc">Price (Ascending)</label>
-                    </div>
-                    <div className="">
-                        <input type="radio" id="desc" value="desc" name="sort" onChange={e=>{setSort("desc"); setSortType("price")}}/>
-                        <label htmlFor="desc">Price (Descending)</label>
-                    </div>
-                    <div className="">
-                        <input type="radio" id="brand" value="brand" name="sort" onChange={e=>{setSort("asc"); setSortType("brand")}}/>
+                        <input type="radio" id="brand" value="brand" name="sort" onChange={e=>{setSort("asc"); setSortType("brand")}} defaultChecked/>
                         <label htmlFor="brand">Brand (A-Z)</label>
                     </div>
                     <div className="">
                         <input type="radio" id="branddesc" value="branddesc" name="sort" onChange={e=>{setSort("desc"); setSortType("brand")}}/>
                         <label htmlFor="branddesc">Brand (Z-A)</label>
+                    </div>
+                    <div className="">
+                        <input type="radio" id="asc" value="asc" name="sort" onChange={e=>{setSort("asc"); setSortType("price")}}/>
+                        <label htmlFor="asc">Price (Ascending)</label>
+                    </div>
+                    <div className="">
+                        <input type="radio" id="desc" value="desc" name="sort" onChange={e=>{setSort("desc"); setSortType("price")}}/>
+                        <label htmlFor="desc">Price (Descending)</label>
                     </div>
                 </div>
             </div>

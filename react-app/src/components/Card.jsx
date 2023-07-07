@@ -6,7 +6,7 @@ import { userData } from '../helpers'
 
 const Card = ({item}) => {
         const checkCat = () => {
-            if(item?.attributes.categories[0] === "Kratom Products") {
+            if(item?.attributes?.categories?.data?.[0]?.attributes?.Name === "Kratom Products") {
                 return "STRAINS"
             } else {
                 return "FLAVORS"

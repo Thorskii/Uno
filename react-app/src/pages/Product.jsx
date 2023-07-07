@@ -40,21 +40,8 @@ const Product = () => {
         setChosenFlavor("")
       }, []);
 
-      const externalHTML = <FaCartPlus className=""/>;
-      useEffect(() => {
-        const interval = setInterval(() => {
-            
-            document.getElementById("add-to-cart").innerHTML = externalHTML;
-            document.getElementById("add-to-cart").innerHTML += "ADD TO CART";
-        }, 2000);
-      
-        return () => clearInterval(interval);
-      }, []);
-
-      console.log(data?.attributes?.categories?.data?.[0])
-
       const checkCat = () => {
-        if(data?.attributes?.categories[0] === "Kratom Products") {
+        if(data?.attributes?.categories?.data?.[0]?.attributes?.Name === "Kratom Products") {
             return "STRAINS"
         } else {
             return "FLAVORS"
@@ -66,6 +53,7 @@ const Product = () => {
       });
 
   
+      var externalHTML;
     return (
       <div className="flex flex-col md:flex-row py-10 px-50 gap-50">
         {loading ? (
@@ -120,8 +108,14 @@ const Product = () => {
                             flavor: chosenFlavor.attributes.Name,
                             quantity,
                             }));
+                            externalHTML = document.getElementById("add-to-cart").innerHTML;
                             document.getElementById("pickFlavor").innerHTML = "";
                             document.getElementById("add-to-cart").innerHTML = "ITEM ADDED TO CART";
+                            const interval = setInterval(() => {
+                                document.getElementById("add-to-cart").innerHTML = externalHTML;
+                                clearInterval(interval);
+                            }, 2000);
+                            
                         } else {document.getElementById("pickFlavor").innerHTML = " *Please select a flavor!"}}
                     }
                 >
