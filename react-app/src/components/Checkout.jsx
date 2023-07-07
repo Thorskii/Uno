@@ -10,7 +10,7 @@ import "./Cart.css"
 import { useSelector } from "react-redux";
 
 const Checkout = () => {
-    
+    window.location.reload();
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -32,6 +32,7 @@ const Checkout = () => {
           console.log(result.text);
           dispatch(resetCart());
           navigate("/");
+          alert("Order placed successfully, we will contact you soon in regards to your order!")
       }, (error) => {
           console.log(error.text);
       });
