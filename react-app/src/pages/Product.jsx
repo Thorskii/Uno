@@ -30,7 +30,7 @@ const Product = () => {
     }
 
     useEffect(() => {
-        axios.get(process.env.REACT_APP_API_URL+`/flavors?populate[products]=*&filters[products][id][$eq]=${id}`)
+        axios.get(process.env.REACT_APP_API_URL+`/flavors?populate[products]=*&filters[products][id][$eq]=${id}&sort=Name`)
         .then(res => setFlavors(res.data))
         .catch(err => console.log(err));
       }, [id])
@@ -126,8 +126,7 @@ const Product = () => {
                     <span id="pickFlavor" className='text-red-500 font-semibold'></span>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                    {flavors?.data?.sort((a, b) => {
-            return a.Name.localeCompare(b.Name) ? 1 : -1;}).map((flavor)=>(<button id={flavor.id} key={flavor.id} onClick={() => {setChosenFlavor((e) => (flavor)); 
+                    {flavors?.data?.map((flavor)=>(<button id={flavor.id} key={flavor.id} onClick={() => {setChosenFlavor((e) => (flavor)); 
                             function buttonColor() {
                                 if(chosenFlavor) {
                                     document.getElementById(chosenFlavor.id).style.borderColor='#e5e7eb'; 
