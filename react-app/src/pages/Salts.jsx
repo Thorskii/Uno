@@ -25,7 +25,7 @@ const Salts = () => {
     return (
     <div className="">
         <div className='relative p-5'>
-            <h1 className="absolute font-bold text-4xl p-5 text-mushTitle left-0 lg:left-[220px] lg:-top-5">Love-Sex Support</h1>
+            <h1 className="absolute font-bold text-4xl p-5 text-mushTitle left-0 lg:left-[220px] lg:-top-5">Nicotine Salts</h1>
         </div>
         
         <div className="py-6 flex flex-col md:flex-row">
