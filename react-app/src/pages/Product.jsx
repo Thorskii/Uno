@@ -42,7 +42,8 @@ const Product = () => {
 
       useEffect(() => {
         const interval = setInterval(() => {
-            document.getElementById("add-to-cart").innerHTML = "ADD TO CART"
+            const externalHTML = `<FaCartPlus className=""/>ADD TO CART`
+            document.getElementById("add-to-cart").innerHTML = externalHTML;
         }, 2000);
       
         return () => clearInterval(interval);
@@ -125,8 +126,8 @@ const Product = () => {
                     <span id="pickFlavor" className='text-red-500 font-semibold'></span>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                    {flavors?.data?.sort((first, second) => {
-            return first.Name > second.Name ? 1 : -1;}).map((flavor)=>(<button id={flavor.id} key={flavor.id} onClick={() => {setChosenFlavor((e) => (flavor)); 
+                    {flavors?.data?.sort((a, b) => {
+            return a.Name.localeCompare(b.Name) ? 1 : -1;}).map((flavor)=>(<button id={flavor.id} key={flavor.id} onClick={() => {setChosenFlavor((e) => (flavor)); 
                             function buttonColor() {
                                 if(chosenFlavor) {
                                     document.getElementById(chosenFlavor.id).style.borderColor='#e5e7eb'; 
