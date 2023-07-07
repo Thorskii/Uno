@@ -4,7 +4,16 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { userData } from '../helpers'
 
-const Card = ({item}) => {
+const Card = ({item}, {catId}) => {
+        console.log(catId)
+
+        const checkCat = () => {
+            if(catId == 3) {
+                return "STRAINS"
+            } else {
+                return "FLAVORS"
+            }
+        } 
 
         const { jwt } = userData();
         const isLoggedIn = !!jwt;
@@ -50,7 +59,7 @@ const Card = ({item}) => {
                 <div className='p-3 md:w-full bg-mush px-5'>
                     <h2 className="font-bold text-mushTitle text-base text-lg">{item?.attributes.brand}</h2>
                     <h2 className="font-semibold h-20 text-lg">{item?.attributes.Name}</h2>
-                    <p className="text-mushTitle text-base font-semibold">FLAVORS</p>
+                    <p className="text-mushTitle text-base font-semibold">{checkCat}</p>
                     <div className="">
                         <div className="flex justify-between">
                             <div className="flex text-[9px] w-5/6">

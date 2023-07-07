@@ -40,14 +40,23 @@ const Product = () => {
         setChosenFlavor("")
       }, []);
 
+      const externalHTML = `<FaCartPlus className=""/>ADD TO CART`
       useEffect(() => {
         const interval = setInterval(() => {
-            const externalHTML = `<FaCartPlus className=""/>ADD TO CART`
+            
             document.getElementById("add-to-cart").innerHTML = externalHTML;
         }, 2000);
       
         return () => clearInterval(interval);
       }, []);
+
+      const checkCat = () => {
+        if(data?.attributes?.categories === "Kratom Products") {
+            return "STRAINS"
+        } else {
+            return "FLAVORS"
+        }
+    } 
 
       useEffect(() => {
         document.title = data?.attributes?.Name + " - Uno Distribution";  
@@ -122,7 +131,7 @@ const Product = () => {
             <div className="flex flex-col gap-3 text-base mt-30 py-5">
                 <hr />
                 <div>
-                    <span className="font-semibold">FLAVORS</span>
+                    <span className="font-semibold">{checkCat}</span>
                     <span id="pickFlavor" className='text-red-500 font-semibold'></span>
                 </div>
                 <div className="flex flex-wrap gap-3">
