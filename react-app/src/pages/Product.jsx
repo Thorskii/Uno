@@ -40,17 +40,18 @@ const Product = () => {
         setChosenFlavor("")
       }, []);
 
-      const externalHTML = `<FaCartPlus className=""/>ADD TO CART`
+      const externalHTML = <FaCartPlus className=""/>;
       useEffect(() => {
         const interval = setInterval(() => {
             
             document.getElementById("add-to-cart").innerHTML = externalHTML;
+            document.getElementById("add-to-cart").innerHTML += "ADD TO CART";
         }, 2000);
       
         return () => clearInterval(interval);
       }, []);
 
-      console.log(data?.attributes?.categories)
+      console.log(data?.attributes?.categories[0])
 
       const checkCat = () => {
         if(data?.attributes?.categories[0] === "Kratom Products") {
