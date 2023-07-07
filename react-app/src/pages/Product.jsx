@@ -41,6 +41,14 @@ const Product = () => {
       }, []);
 
       useEffect(() => {
+        const interval = setInterval(() => {
+            document.getElementById("add-to-cart").innerHTML = "ADD TO CART"
+        }, 2000);
+      
+        return () => clearInterval(interval);
+      }, []);
+
+      useEffect(() => {
         document.title = data?.attributes?.Name + " - Uno Distribution";  
       });
 
@@ -117,7 +125,8 @@ const Product = () => {
                     <span id="pickFlavor" className='text-red-500 font-semibold'></span>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                    {flavors?.data?.map((flavor)=>(<button id={flavor.id} key={flavor.id} onClick={() => {setChosenFlavor((e) => (flavor)); 
+                    {flavors?.data?.sort((first, second) => {
+            return first.Name > second.Name ? 1 : -1;}).map((flavor)=>(<button id={flavor.id} key={flavor.id} onClick={() => {setChosenFlavor((e) => (flavor)); 
                             function buttonColor() {
                                 if(chosenFlavor) {
                                     document.getElementById(chosenFlavor.id).style.borderColor='#e5e7eb'; 
