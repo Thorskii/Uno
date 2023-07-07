@@ -50,6 +50,8 @@ const Product = () => {
         return () => clearInterval(interval);
       }, []);
 
+      console.log(data?.attributes?.categories)
+
       const checkCat = () => {
         if(data?.attributes?.categories[0] === "Kratom Products") {
             return "STRAINS"
