@@ -131,7 +131,7 @@ const Product = () => {
             <div className="flex flex-col gap-3 text-base mt-30 py-5">
                 <hr />
                 <div>
-                    <span className="font-semibold">{checkCat}</span>
+                    <span className="font-semibold">{checkCat()}</span>
                     <span id="pickFlavor" className='text-red-500 font-semibold'></span>
                 </div>
                 <div className="flex flex-wrap gap-3">
