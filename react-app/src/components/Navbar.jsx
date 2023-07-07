@@ -36,7 +36,7 @@ export default function AppRouter() {
                     <Link onClick={openNavbar} className={menuClassName}>{menuIcon}Categories</Link>
                     <Link to="/cbd" className={linkClassName}>Hemp-CBD</Link>
                     <Link to="/vapes" className={linkClassName}>Disposable Vapes</Link>
-                    <Link to="/puff" className={linkClassName}>Tasty Puff Cones</Link>
+                    <Link to="/cones" className={linkClassName}>Tasty Puff Cones</Link>
                     <Link to="/mushrooms" className={linkClassName}>Mushrooms</Link>
                     <Link to="/kratom" className={linkClassName}>Kratom</Link>
                     <Link to="/love" className={linkClassName}>Love</Link>
