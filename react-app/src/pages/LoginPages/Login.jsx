@@ -45,9 +45,9 @@ const Login = () => {
     <div className="flex justify-center items-center align-middle h-[55vh]">
         <div>
             <h2 className="pb-5 text-2xl font-bold">Login:</h2>
-            <form className="flex flex-col gap-y-2" novalidate>
-                <input type="email" name="identifier" value={user.username} onChange={handleChange} placeholder="Enter your username" className="rounded border-2 border-gray-200 w-full" />
-                <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Enter your password" className="rounded border-2 border-gray-200 w-full"/>
+            <form className="flex flex-col gap-y-2" >
+                <input type="email" name="identifier" value={user.username} oninvalid="this.setCustomValidity('Username or password incorrect')" onChange={handleChange} placeholder="Enter your username" className="rounded border-2 border-gray-200 w-full" required/>
+                <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Enter your password" className="rounded border-2 border-gray-200 w-full" required/>
                 <div className="flex w-1/2">
                     <button onClick={handleLogin} className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white ">Login</button>
                 </div>
