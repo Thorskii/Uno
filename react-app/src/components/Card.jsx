@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { userData } from '../helpers'
 
-const Card = ({item}, {catId}) => {
+const Card = ({item, catId}) => {
         console.log({catId})
 
         const checkCat = () => {
