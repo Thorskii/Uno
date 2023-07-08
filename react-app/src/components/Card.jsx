@@ -35,13 +35,16 @@ const Card = ({item}) => {
         const [flavors, setFlavors] = useState([]);
 
         useEffect(() => {
-            axios.get(process.env.REACT_APP_API_URL+`/flavors?populate[products]=*&filters[products][id][$eq]=${item.id}`)
+            axios.get(process.env.REACT_APP_API_URL+`/flavors?populate[products]=*&filters[products][id][$eq]=${item.id}&sort=Name`)
             .then(res => setFlavors(res.data))
             .catch(err => console.log(err));
           }, [])
 
-        const str = flavors?.data?.slice(0,7).map((flavor)=>(flavor?.attributes?.Name))
-        const out = str && str.join(', ')
+        const str = flavors?.data?.slice(0,6).map((flavor)=>(flavor?.attributes?.Name))
+        var out = str && str.join(', ')
+        if(flavors?.data?.length >= 6) {
+            out += "...";
+        }
 
     return (
     <>
