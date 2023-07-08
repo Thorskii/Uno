@@ -5,13 +5,6 @@ import { useState, useEffect } from 'react'
 import { userData } from '../helpers'
 
 const Card = ({item}) => {
-        const checkCat = () => {
-            if(item?.attributes?.categories?.data?.[0]?.attributes?.Name === "Kratom Products") {
-                return "STRAINS"
-            } else {
-                return "FLAVORS"
-            }
-        } 
 
         const { jwt } = userData();
         const isLoggedIn = !!jwt;
@@ -39,6 +32,26 @@ const Card = ({item}) => {
             .then(res => setFlavors(res.data))
             .catch(err => console.log(err));
           }, [])
+
+          const isFound = flavors?.data?.some(flavor => {
+            if(flavor?.attributes?.Name === "Bali" || flavor?.attributes?.Name === "Maeng Da" || flavor?.attributes?.Name === "Trainwreck" || flavor?.attributes?.Name === "White Thai" || flavor?.attributes?.Name === "Green Malay" || flavor?.attributes?.Name === "Red Vein") {
+                return true;
+            } else {
+                return false;
+            }
+          })
+
+          const checkCat = () => {
+            if(isFound) {
+                return "STRAINS"
+            } else if(flavors?.data?.length === 1) {
+                return "FLAVOR"
+            } else {
+                return "FLAVORS"
+            }
+        } 
+
+
 
         const str = flavors?.data?.slice(0,6).map((flavor)=>(flavor?.attributes?.Name))
         var out = str && str.join(', ')

@@ -40,9 +40,19 @@ const Product = () => {
         setChosenFlavor("")
       }, []);
 
+      const isFound = flavors?.data?.some(flavor => {
+        if(flavor?.attributes?.Name === "Bali" || flavor?.attributes?.Name === "Maeng Da" || flavor?.attributes?.Name === "Trainwreck" || flavor?.attributes?.Name === "White Thai" || flavor?.attributes?.Name === "Green Malay" || flavor?.attributes?.Name === "Red Vein") {
+            return true;
+        } else {
+            return false;
+        }
+      })
+
       const checkCat = () => {
-        if(data?.attributes?.categories?.data?.[0]?.attributes?.Name === "Kratom Products") {
+        if(isFound) {
             return "STRAINS"
+        } else if(flavors?.data?.length === 1) {
+            return "FLAVOR"
         } else {
             return "FLAVORS"
         }
