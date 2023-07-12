@@ -77,11 +77,11 @@ const Product = () => {
                 <img className="w-full h-[150px] w-[150px] hidden lg:flex object-cover cursor-pointer mb-[10px] ml-[5px] border border-solid border-gray border-1" src={data?.attributes?.img3?.data?.attributes?.url} alt="" onClick={(e) => setSelectedImg("img3")} style={{ visibility:data?.attributes?.img3?.data?.attributes?.url !== undefined? 'visible': 'hidden'}} onError = {e => e.target.style.display = 'none'}/>
                 <img className="w-full h-[150px] w-[150px] hidden lg:flex object-cover cursor-pointer mb-[10px] ml-[5px] border border-solid border-gray border-1" src={data?.attributes?.img4?.data?.attributes?.url} alt="" onClick={(e) => setSelectedImg("img4")} style={{ visibility:data?.attributes?.img4?.data?.attributes?.url !== undefined? 'visible': 'hidden'}} onError = {e => e.target.style.display = 'none'}/>
               </div>
-              <div className="relative lg:w-2/3">
+              <div className="relative lg:w-2/3 mx-auto">
                     <button onClick={(e) => setSelectedImg("img")} className="absolute bottom-1/2 left-0 flex lg:hidden"><FaArrowLeft className="hover:bg-gray-100 w-[60px] h-[60px] p-3 bg-gray-50/50"/></button>
                     <button onClick={(e) => setSelectedImg("img2")} className="absolute right-1 bottom-1/2 flex lg:hidden" onError = {e => e.target.style.display = 'none'}><FaArrowRight className="hover:bg-gray-100 w-[60px] h-[60px] p-3 bg-gray-50/50"/></button>
                         {/* <img className="flex w-full min-h-[200px] md:min-h-[700px] max-h-[1200px] md:max-h-[600px] object-contain max-w-[700px]" src={process.env.REACT_APP_UPLOAD_URL + data?.attributes[selectedImg]?.data?.attributes?.url} alt=""/> */}
-                        <img className="flex w-full min-h-[200px] md:min-h-[700px] max-h-[1200px] md:max-h-[600px] object-contain max-w-[700px]" src={data?.attributes[selectedImg]?.data?.attributes?.url} alt=""/>
+                        <img className="flex w-full min-h-[200px] md:min-h-[600px] max-h-[1200px] md:max-h-[600px] object-contain max-w-[700px]" src={data?.attributes[selectedImg]?.data?.attributes?.url} alt=""/>
 
                 </div>
             </div>
