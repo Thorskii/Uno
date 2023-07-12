@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom"
 import "./Slideshow.css"
 
-const images = ["https://i.imgur.com/ueLEee0.png", "https://i.imgur.com/QJFBrDr.jpg", "https://cdn.shopify.com/s/files/1/0614/0303/7892/articles/Elf-Bar-Bc5000-Disposable-Banner-Tagline_1400x.progressive.jpg?v=1660769809"]
-const delay = 6750;
+const images = ["https://i.imgur.com/mNJTHys.mp4", "https://cdn.shopify.com/s/files/1/0614/0303/7892/articles/Elf-Bar-Bc5000-Disposable-Banner-Tagline_1400x.progressive.jpg?v=1660769809", "https://i.imgur.com/QJFBrDr.jpg"]
+const delay = 8000;
 
 
 
@@ -17,11 +17,11 @@ function Slideshow() {
   const navigate = useNavigate();
   const reDirect = () => {
         if({index}.index < 1) {
-            navigate("/product/1")
+            navigate("/product/97")
         } else if ({index}.index > 0 && {index}.index < 2) {
-            navigate("/search")
-        } else if({index}.index > 1){
             navigate("/product/58")
+        } else if({index}.index > 1){
+            navigate("/search")
         }
     }
 
@@ -61,7 +61,7 @@ function Slideshow() {
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             }}onClick={reDirect}
-          ></div>
+          ><video autoPlay loop muted id='video' className="m-auto h-full"><source src={images[index]} type='video/mp4'></source></video></div>
         ))}
       </div>
 

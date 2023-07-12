@@ -64,7 +64,7 @@ const Card = ({item}) => {
         <div className="p-1 md:p-2 w-1/2 sm:w-1/3 lg:w-[330px]">
             <div className="overflow-hidden rounded-xl shadow-lg border-solid border-2 border-mush ">
                 <span className="border-box overflow-hidden bg-none relative">
-                    {item?.attributes.isNew && <span>New</span>}
+                    {item?.attributes.isNew && <span className='bg-blue-400 text-white absolute left-2 top-2 rounded-2xl p-1'>New</span>}
                         <Link to={`/product/${item.id}`}>
                             {/* <img className="mx-auto object-contain object-center w-40 lg:w-56 xl:w-full h-40" src={process.env.REACT_APP_UPLOAD_URL + item.attributes?.img?.data?.attributes?.url} alt="" /> */}
                             <img className="mx-auto object-contain object-center w-40 lg:w-56 xl:w-full h-40" src={item.attributes?.img?.data?.attributes?.url} alt="" />
