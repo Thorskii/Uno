@@ -124,7 +124,7 @@ const Product = () => {
                             const interval = setInterval(() => {
                                 document.getElementById("add-to-cart").innerHTML = externalHTML;
                                 clearInterval(interval);
-                            }, 2000);
+                            }, 1000);
                             
                         } else {document.getElementById("pickFlavor").innerHTML = " *Please select a flavor!"}}
                     }
@@ -142,15 +142,17 @@ const Product = () => {
                     <span id="pickFlavor" className='text-red-500 font-semibold'></span>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                    {flavors?.data?.map((flavor)=>(<button id={flavor.id} key={flavor.id} onClick={() => {setChosenFlavor((e) => (flavor)); 
-                            function buttonColor() {
-                                if(chosenFlavor) {
-                                    document.getElementById(chosenFlavor.id).style.borderColor='#e5e7eb'; 
-                                    document.getElementById(chosenFlavor.id).style.backgroundColor='white';
-                                }
-                                document.getElementById(flavor.id).style.backgroundColor='#eacf00'; 
-                                document.getElementById(flavor.id).style.borderColor='#eacf00'} 
-                            buttonColor()}
+                    {flavors?.data?.map((flavor)=>(<button id={flavor.id} key={flavor.id} onClick={() => {
+                                setChosenFlavor((e) => (flavor)); 
+                                function buttonColor() {
+                                    if(chosenFlavor) {
+                                        document.getElementById(chosenFlavor.id).style.borderColor='#e5e7eb'; 
+                                        document.getElementById(chosenFlavor.id).style.backgroundColor='white';
+                                    }
+                                    document.getElementById(flavor.id).style.backgroundColor='#eacf00'; 
+                                    document.getElementById(flavor.id).style.borderColor='#eacf00'} 
+                                buttonColor()
+                            }
                         } className="flex flex-row rounded border-2 border-gray-200 w-fit p-2 cursor-pointer text-base">{flavor?.attributes?.Name}</button>))}
                 </div>
                 

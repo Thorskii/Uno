@@ -18,6 +18,8 @@ const Cart = () => {
     return total.toFixed(2);
   };
 
+//   tempProducts?.sort((a, b) => a.title.localeCompare(b.title));
+
   useEffect(() => {
     document.title = "Cart - Uno Distribution";  
   }, []);
@@ -27,12 +29,12 @@ const Cart = () => {
     <div class="w-full items-center justify-center flex">
         <div className="cart">
             <h1>Products in your cart</h1>
-            {products?.map((item) => (
+            {products.map((item) => (
                 <div className="item" key={item.id}>
-                <Link to={`/product/${item.id}`}><img src={item.img} alt="" /></Link>
-                <div className="details">
+                <Link to={`/product/${item.id}`}><img src={item.img} alt="" className="w-[150px] h-[150px]"/></Link>
+                <div className="details w-full">
                     <h1>{item.title}</h1>
-                    <p>Flavors: {item.flavor}</p>
+                    <p>Flavor: {item.flavor}</p>
                     <p class="w-3/4">{item.desc?.substring(0, 100)}...</p>
                     <div className="price">
                     {item.quantity} x ${item.price}
