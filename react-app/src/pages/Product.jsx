@@ -121,10 +121,12 @@ const Product = () => {
                             externalHTML = document.getElementById("add-to-cart").innerHTML;
                             document.getElementById("pickFlavor").innerHTML = "";
                             document.getElementById("add-to-cart").innerHTML = "ITEM ADDED TO CART";
+                            document.getElementById("add-to-cart").style.backgroundColor='#ffee6d'
                             const interval = setInterval(() => {
+                                document.getElementById("add-to-cart").style.backgroundColor='#eacf00'
                                 document.getElementById("add-to-cart").innerHTML = externalHTML;
                                 clearInterval(interval);
-                            }, 1000);
+                            }, 500);
                             
                         } else {document.getElementById("pickFlavor").innerHTML = " *Please select a flavor!"}}
                     }
