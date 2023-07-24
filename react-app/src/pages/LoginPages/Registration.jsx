@@ -26,6 +26,11 @@ const Registration = () => {
         }
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        signUp();
+      };
+
     const handleUserChange = ({target}) => {
         const {name, value} = target;
         setUser((currentUser) => ({...currentUser, [name]: value,}) )
@@ -40,7 +45,8 @@ const Registration = () => {
     return (
     <div className="flex w-full">
         <div className="relative flex justify-center items-center w-full">
-            <form className="flex flex-col gap-y-2 w-1/6" onSubmit={(event) => event.preventDefault()}>    
+            {/* <form className="flex flex-col gap-y-2 w-1/6" onSubmit={(event) => event.preventDefault()}>*/}
+            <form className="flex flex-col gap-y-2 w-1/6" onSubmit={handleSubmit}>
                 <h2 className="pb-5 font-bold">Sign Up:</h2>
                 <div>
                     <h2>Username:</h2>
@@ -64,13 +70,14 @@ const Registration = () => {
                 </div>
                 <div>
                     <h2>Employer Identification Number (EIN):</h2>
-                    <input type="text" name="EIN" id="EIN" value={user.EIN} onChange={handleUserChange} placeholder="Enter your EIN" className={inputArea}/>
+                    <input type="text" name="EIN" id="EIN" pattern="^\d{2}-\d{7}" value={user.EIN} onChange={handleUserChange} placeholder="XX-XXXXXXX" className={inputArea}/>
                 </div>
                 <div>
                     <h2>Business Tax Resale Number:</h2>
-                    <input type="text" name="taxResale" id="taxResale" value={user.taxResale} onChange={handleUserChange} placeholder="Enter your Tax Resale Number" className={inputArea}/>
+                    <input type="text" name="taxResale" id="taxResale" pattern="^\d{8}-\d{3}-STC" value={user.taxResale} onChange={handleUserChange} placeholder="XXXXXXXX-XXX-STC" className={inputArea}/>
                 </div><br/>
-                <button className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white " onClick={signUp}>Register</button><br/>
+                {/* <button className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white " onClick={signUp}>Register</button><br/> */}
+                <input type="submit" className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white " value="Register"></input><br/>
             </form>
         </div>
     </div>

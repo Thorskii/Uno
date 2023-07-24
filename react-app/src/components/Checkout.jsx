@@ -37,16 +37,19 @@ const Checkout = () => {
       });
   };
 
+  const tempProducts = [...products]
+  tempProducts?.sort((a, b) => a.title.localeCompare(b.title));
+
 //   products?.map((item) => (item.quantity + "x  " + item.title + "   " + item.flavor + "   $"+ item.price + "\n")).join("")
   const mapProds = () => {
     let str = "";
-    products?.map((item) => (str += (item.quantity + "x  |  " + item.title + "  |  " + item.flavor + "  |  $"+ item.price + "  |  $" + item.price*item.quantity + "\n"))).join("")
+    tempProducts?.map((item) => (str += (item.quantity + "x  |  " + item.title + "  |  " + item.flavor + "  |  $"+ item.price + "  |  $" + item.price*item.quantity + "\n"))).join("")
     return str;
   }
 
   const totalProds = () => {
     let total = 0;
-    products?.map((item) => (total += (item.price*item.quantity)));
+    tempProducts?.map((item) => (total += (item.price*item.quantity)));
     return "$"+total;
   }
 

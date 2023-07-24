@@ -34,13 +34,15 @@ export default function AppRouter() {
                 <ul className="flex flex-col md:flex-row text-center md:text-left justify-center">
                     <Link to="/" className="flex items-center justify-center"><img className="h-[40px] md:h-[70px] pl-2 lg:pl-0 lg:pr-7" src={logo} alt="Logo"/></Link>
                     <Link onClick={openNavbar} className={menuClassName}>{menuIcon}Categories</Link>
-                    <Link to="/cbd" className={linkClassName}>Hemp-CBD</Link>
                     <Link to="/vapes" className={linkClassName}>Disposable Vapes</Link>
-                    <Link to="/cones" className={linkClassName}>Tasty Puff Cones</Link>
-                    <Link to="/mushrooms" className={linkClassName}>Mushrooms</Link>
+                    <Link to="/Energy" className={linkClassName}>Energy Shots/Drinks</Link>
+                    <Link to="/cbd" className={linkClassName}>Hemp-CBD</Link>
                     <Link to="/kratom" className={linkClassName}>Kratom</Link>
-                    <Link to="/love" className={linkClassName}>Love</Link>
+                    <Link to="/mushrooms" className={linkClassName}>Mushrooms</Link>
                     <Link to="/salts" className={linkClassName}>Nicotine Salts</Link>
+                    <Link to="/lighters" className={linkClassName}>Lighters</Link>
+                    <Link to="/love" className={linkClassName}>Love</Link>
+                    <Link to="/cones" className={linkClassName}>Tasty Puff Cones</Link>
                 </ul>
             </div>
             <div className=""></div>

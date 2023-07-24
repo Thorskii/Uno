@@ -12,6 +12,8 @@ import Vapes from "./pages/Vapes"
 import Love from "./pages/Love"
 import Cones from "./pages/TastyPuffCones";
 import Salts from "./pages/Salts";
+import Lighters from "./pages/Lighters";
+import Energy from "./pages/Energy";
 
 import Cart from "./components/Cart"
 import SearchPage from "./pages/SearchPage"
@@ -50,6 +52,8 @@ import KratomInfo from "./pages/KratomInfo";
             <Route path="/love" element={<Love />}/>
             <Route path="/cones" element={<Cones />}/>
             <Route path="/salts" element={<Salts />}/>
+            <Route path="/lighters" element={<Lighters />}/>
+            <Route path="/energy" element={<Energy />}/>
 
 
             <Route path="/cart" element={<Protector Component={Cart}/>}/>
