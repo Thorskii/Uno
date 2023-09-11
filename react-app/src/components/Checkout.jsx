@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useEffect } from "react";
 import useFetchUser from "../hooks/useFetchUser";
 import { useDispatch } from "react-redux";
@@ -13,7 +13,12 @@ const Checkout = () => {
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {data, loading} = useFetchUser(`/users/me?populate=*`);
+  const {data} = useFetchUser(`/users/me?populate=*`);
+
+  const username = data?.businessName;
+  const email = data?.email;
+  const EIN = data?.EIN;
+  const taxResale = data?.taxResale;
 
 
   useEffect(() => {
@@ -60,13 +65,13 @@ const Checkout = () => {
         <form ref={form} onSubmit={sendEmail} className="flex flex-col w-3/4 md:w-1/3 h-full">
 
             <label for="fullName" className="font-bold">Business Name:</label>
-            <input type="text" value={data?.businessName} name="fullName" readonly/><br/>
+            <input type="text" value={username} className="" name="fullName" readonly/><br/>
             <label for="email" className="font-bold">E-mail:</label>
-            <input type="email" value={data?.email} name="email" readonly/><br/>
+            <input type="email" value={email} name="email" readonly/><br/>
             <label for="ein" className="font-bold">EIN:</label>
-            <input type="text" value={data?.EIN} name="ein" readonly/><br/>
+            <input type="text" value={EIN} name="ein" readonly/><br/>
             <label for="taxresale" className="font-bold">Tax Resale:</label>
-            <input type="text" value={data?.taxResale} name="taxresale" readonly/><br/>
+            <input type="text" value={taxResale} name="taxresale" readonly/><br/>
             <label for="products" className="font-bold">Order:</label>
             <textarea  rows={products.length+5} name="products" value={mapProds()} className="whitespace-pre-wrap text-xs sm:text-base" readonly/><br/>
             <label for="taxresale" className="font-bold">Order Subtotal:</label>

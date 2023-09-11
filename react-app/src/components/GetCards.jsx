@@ -4,10 +4,7 @@ import useFetch from "../hooks/useFetch";
 
 
 const GetCards = ({catId, sort, sortType}) => {
-
-    const { data, loading} = useFetch(
-        `/products?populate=*&[filters][categories][id][$eq]=${catId}&sort=${sortType}:${sort}`
-      );
+    const { data, loading} = useFetch(`/products?populate=*&filters[categories][id][$eq]=${catId}&sort=${sortType}:${sort}`);
 
   return (
     // w-fit grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center gap-10 flex items-center justify-center

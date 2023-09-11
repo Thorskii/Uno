@@ -12,15 +12,15 @@ const Kratom = () => {
 
     useEffect(() => {
         setSort("asc")
-      }, []);
+    }, []);
 
-      useEffect(() => {
+    useEffect(() => {
         setSortType("brand")
-      }, []);
+    }, []);
 
-      useEffect(() => {
+    useEffect(() => {
         document.title = "Kratom - Uno Distribution";  
-      }, []);
+    }, []);
 
     return (
     <div className="">

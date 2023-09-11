@@ -77,7 +77,7 @@ const Registration = () => {
                     <input type="text" name="taxResale" id="taxResale" pattern="^\d{8}-\d{3}-STC" value={user.taxResale} onChange={handleUserChange} placeholder="XXXXXXXX-XXX-STC" className={inputArea}/>
                 </div><br/>
                 {/* <button className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white " onClick={signUp}>Register</button><br/> */}
-                <input type="submit" className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white " value="Register"></input><br/>
+                <input type="submit" className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white cursor-pointer" value="Register"></input><br/>
             </form>
         </div>
     </div>
