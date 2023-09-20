@@ -34,7 +34,7 @@ import KratomInfo from "./pages/KratomInfo";
 
 
 
-
+// Re-add all CBD except Hemp Co Shots display & Space Gods
 
  function App() {
   return (
@@ -45,7 +45,7 @@ import KratomInfo from "./pages/KratomInfo";
             <Route path="/" element={<Home />}/>
             <Route path="/about" element={<About />}/>
             <Route path="/product/:id" element={<Product />}/>
-            <Route path="/cbd" element={<Cbd />}/>
+            {/* <Route path="/cbd" element={<Cbd />}/> */}
             <Route path="/mushrooms" element={<Mushrooms />}/>
             <Route path="/kratom" element={<Kratom />}/>
             <Route path="/vapes" element={<Vapes />}/>
