@@ -34,7 +34,8 @@ export default function AppRouter() {
                 <ul className="flex flex-col md:flex-row text-center md:text-left justify-center">
                     <Link to="/" className="flex items-center justify-center"><img className="h-[40px] md:h-[70px] pl-2 lg:pl-0 lg:pr-7" src={logo} alt="Logo"/></Link>
                     <Link onClick={openNavbar} className={menuClassName}>{menuIcon}Categories</Link>
-                    <Link to="/vapes" className={linkClassName}>Disposable Vapes</Link>
+                    <Link to="/vapes" className={linkClassName}>0-3% Vapes</Link>
+                    <Link to="/vapes2" className={linkClassName}>5% Vapes</Link>
                     <Link to="/Energy" className={linkClassName}>Energy Shots/Drinks</Link>
                     {/* <Link to="/cbd" className={linkClassName}>Hemp-CBD</Link> */}
                     <Link to="/kratom" className={linkClassName}>Kratom</Link>
