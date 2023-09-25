@@ -4,7 +4,7 @@ import GetCards from "../components/GetCards"
 
 
 
-const Vapes = () => {
+const Vapes2 = () => {
     const [sort,setSort] = useState(null);
     const [sortType, setSortType] = useState(null);
 
@@ -19,7 +19,7 @@ const Vapes = () => {
 
 
       useEffect(() => {
-        document.title = "0-3% Vapes - Uno Distribution";  
+        document.title = "5% Vapes - Uno Distribution";  
       }, []);
 
     return (
@@ -51,7 +51,7 @@ const Vapes = () => {
                 </div>
             </div>
             <div className="w-full flex flex-wrap justify-center ">
-                <GetCards sort={sort} sortType={sortType} catId="4"/>
+                <GetCards sort={sort} sortType={sortType} catId="10"/>
             </div>
             <div className="w-54"></div>
         </div>
@@ -59,4 +59,4 @@ const Vapes = () => {
 
     )
   }
-  export default Vapes
+  export default Vapes2

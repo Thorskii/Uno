@@ -31,6 +31,7 @@ import { Protector } from "./helpers";
 import Profile from "./pages/LoginPages/Profile";
 import { SendtoProfile } from "./helpers";
 import KratomInfo from "./pages/KratomInfo";
+import Vapes2 from "./pages/Vapes2";
 
 
 
@@ -49,6 +50,7 @@ import KratomInfo from "./pages/KratomInfo";
             <Route path="/mushrooms" element={<Mushrooms />}/>
             <Route path="/kratom" element={<Kratom />}/>
             <Route path="/vapes" element={<Vapes />}/>
+            <Route path="/vapes2" element={<Vapes2 />}/>
             <Route path="/love" element={<Love />}/>
             <Route path="/cones" element={<Cones />}/>
             <Route path="/salts" element={<Salts />}/>
