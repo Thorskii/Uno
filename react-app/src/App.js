@@ -46,7 +46,7 @@ import Vapes2 from "./pages/Vapes2";
             <Route path="/" element={<Home />}/>
             <Route path="/about" element={<About />}/>
             <Route path="/product/:id" element={<Product />}/>
-            {/* <Route path="/cbd" element={<Cbd />}/> */}
+            <Route path="/cbd" element={<Cbd />}/>
             <Route path="/mushrooms" element={<Mushrooms />}/>
             <Route path="/kratom" element={<Kratom />}/>
             <Route path="/vapes" element={<Vapes />}/>
