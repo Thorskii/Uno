@@ -8,17 +8,20 @@ import emailjs from '@emailjs/browser';
 import "./Cart.css"
 
 import { useSelector } from "react-redux";
+import { userData } from "../helpers";
 
 const Checkout = () => {
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {data} = useFetchUser(`/users/me?populate=*`);
+  const data2 = userData()
+  console.log(data2)
 
-  const username = data?.businessName;
-  const email = data?.email;
-  const EIN = data?.EIN;
-  const taxResale = data?.taxResale;
+  const username = data2?.username
+  const email = data2?.email
+  const EIN = data2?.ein;
+  const taxResale = data2?.taxResale;
 
 
   useEffect(() => {
@@ -31,7 +34,7 @@ const Checkout = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, e.target, process.env.REACT_APP_PUBLIC_KEY)
+    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
       .then((result) => {
           console.log(result.text);
           dispatch(resetCart());

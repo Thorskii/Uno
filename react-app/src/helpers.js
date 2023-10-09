@@ -8,6 +8,8 @@ export const storeUser = (data) => {
       username: data.user.username,
       email: data.user.email,
       address: data.user.address,
+      ein: data.user.EIN,
+      taxResale: data.user.taxResale,
       jwt: data.jwt,
     })
   );
