@@ -51,7 +51,7 @@ const Vapes = () => {
                 </div>
             </div>
             <div className="w-full flex flex-wrap justify-center ">
-                <GetCards sort={sort} sortType={sortType} catId="4"/>
+                <GetCards sort={sort} sortType={sortType} catId="11"/>
             </div>
             <div className="w-54"></div>
         </div>
