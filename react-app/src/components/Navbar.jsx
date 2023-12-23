@@ -38,6 +38,8 @@ export default function AppRouter() {
                     {/* <Link to="/vapes2" className={linkClassName}>5% Vapes</Link> */}
                     <Link to="/Energy" className={linkClassName}>Energy Shots/Drinks</Link>
                     <Link to="/cbd" className={linkClassName}>Hemp-CBD</Link>
+                    <Link to="/kava" className={linkClassName}>Kava</Link>
+
                     <Link to="/kratom" className={linkClassName}>Kratom</Link>
                     <Link to="/mushrooms" className={linkClassName}>Mushrooms</Link>
                     <Link to="/salts" className={linkClassName}>Nicotine Salts</Link>
