@@ -50,31 +50,31 @@ const Registration = () => {
                 <h2 className="pb-5 font-bold">Sign Up:</h2>
                 <div>
                     <h2>Username:</h2>
-                    <input type="text" name="username" value={user.username} onChange={handleUserChange} placeholder="Enter your name" className={inputArea}/>
+                    <input type="text" name="username" value={user.username} onChange={handleUserChange} placeholder="Enter your name" className={inputArea} required/>
                 </div>
                 <div>
                     <h2>Password:</h2>
-                    <input type="password" name="password" value={user.password} onChange={handleUserChange} placeholder="Enter your password" className={inputArea}/>
+                    <input type="password" name="password" value={user.password} onChange={handleUserChange} placeholder="Enter your password" className={inputArea} required/>
                 </div>
                 <div>
                     <h2>Email:</h2>
-                    <input type="email" name="email" value={user.email} onChange={handleUserChange} placeholder="Enter your email" className={inputArea}/>
+                    <input type="email" name="email" value={user.email} onChange={handleUserChange} placeholder="Enter your email" className={inputArea} required/>
                 </div>
                 <div>
                     <h2>Business Name:</h2>
-                    <input type="text" name="businessName" value={user.businessName} onChange={handleUserChange} placeholder="Enter your business's name" className={inputArea}/>
+                    <input type="text" name="businessName" value={user.businessName} onChange={handleUserChange} placeholder="Enter your business's name" className={inputArea} required/>
                 </div>
                 <div>
                     <h2>Business Address:</h2>
-                    <input type="text" name="address" value={user.address} onChange={handleUserChange} placeholder="Enter your business's address" className={inputArea}/>
+                    <input type="text" name="address" value={user.address} onChange={handleUserChange} placeholder="Enter your business's address" className={inputArea} required/>
                 </div>
                 <div>
                     <h2>Employer Identification Number (EIN):</h2>
-                    <input type="text" name="EIN" id="EIN" pattern="^\d{2}-\d{7}" value={user.EIN} onChange={handleUserChange} placeholder="XX-XXXXXXX" className={inputArea}/>
+                    <input type="text" name="EIN" id="EIN" pattern="^\d{2}-\d{7}" value={user.EIN} onChange={handleUserChange} placeholder="XX-XXXXXXX" className={inputArea} required/>
                 </div>
                 <div>
                     <h2>Business Tax Resale Number:</h2>
-                    <input type="text" name="taxResale" id="taxResale" pattern="^\d{8}-\d{3}-STC" value={user.taxResale} onChange={handleUserChange} placeholder="XXXXXXXX-XXX-STC" className={inputArea}/>
+                    <input type="text" name="taxResale" id="taxResale" pattern="^\d{8}-\d{3}-STC" value={user.taxResale} onChange={handleUserChange} placeholder="XXXXXXXX-XXX-STC" className={inputArea} required/>
                 </div><br/>
                 {/* <button className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white " onClick={signUp}>Register</button><br/> */}
                 <input type="submit" className="hover:bg-blue-300 hover:underline py-2 w-full rounded bg-blue-400 w-full text-white cursor-pointer" value="Register"></input><br/>
