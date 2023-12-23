@@ -14,6 +14,7 @@ import Cones from "./pages/TastyPuffCones";
 import Salts from "./pages/Salts";
 import Lighters from "./pages/Lighters";
 import Energy from "./pages/Energy";
+import Kava from "./pages/Kava";
 
 import Cart from "./components/Cart"
 import SearchPage from "./pages/SearchPage"
@@ -48,6 +49,8 @@ import Vapes2 from "./pages/Vapes2";
             <Route path="/product/:id" element={<Product />}/>
             <Route path="/cbd" element={<Cbd />}/>
             <Route path="/mushrooms" element={<Mushrooms />}/>
+            <Route path="/kava" element={<Kava />}/>
+
             <Route path="/kratom" element={<Kratom />}/>
             <Route path="/vapes" element={<Vapes />}/>
             {/* <Route path="/vapes2" element={<Vapes2 />}/> */}
